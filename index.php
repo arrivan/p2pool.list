@@ -38,6 +38,7 @@ $drk_price = file_get_contents("http://dash.org.ru/price.php?name=DRK");
 $ftc_price = file_get_contents("http://dash.org.ru/price.php?name=FTC");
 $btc_price = file_get_contents("http://dash.org.ru/price.php?name=BTC");
 // test git commit from linux
+// test ssh upload commit
 ?>
 <!DOCTYPE html>
 <html lang="en">
