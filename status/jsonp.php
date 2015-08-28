@@ -44,13 +44,16 @@ if($port[2] == 7903){
 			}
 			$json = json_encode($arr3);
 		}
-		
-		if($report == '/local_stats')
+		if($report == '/local_stats'){
 			$json = json_encode(array_merge_recursive_unique(json_decode($a, true), json_decode($json, true)));
-		
-		if($report == '/local_stats')
-			$json = json_encode(array_merge_recursive_unique(json_decode($a, true), json_decode($json, true)));
+		}
 	}
 }
+
+if($report == '/local_stats'){
+	$arr = json_decode($json, true);
+	arsort($arr["miner_hash_rates"]);
+	$json = json_encode($arr);
+}
 	
-echo sprintf('%s(%s);', $_GET['callback'], $json);  
+echo sprintf('%s(%s);', $_GET['callback'], $json);
